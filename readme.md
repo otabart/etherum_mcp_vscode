@@ -17,7 +17,7 @@ This server implements the Model Context Protocol to provide AI assistants with 
 ## Prerequisites
 
 - Node.js 18.x or higher
-- QuickNode API access (or alternative RPC provider)
+- QuickNode API access 
 - VS Code with MCP support
 
 ## Installation
