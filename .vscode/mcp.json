@@ -1,0 +1,30 @@
+{
+  // 💡 Inputs will be prompted on first server start,
+  //    then stored securely by VS Code.
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "qn-endpoint-name",
+      "description": "QuickNode Endpoint Name"
+    },
+    {
+      "type": "promptString",
+      "id": "qn-token-id",
+      "description": "QuickNode Token ID",
+      "password": true
+    }
+  ],
+  "servers": {
+    // EVM MCP Server configuration
+    "evm": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/build/index.js"],
+      "env": {
+        "QN_ENDPOINT_NAME": "${input:qn-endpoint-name}",
+        "QN_TOKEN_ID": "${input:qn-token-id}"
+      }
+    }
+  }
+}
+// https://github.com/ppl-ai/modelcontextprotocol/
